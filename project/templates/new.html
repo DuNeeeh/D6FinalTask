@@ -1,0 +1,21 @@
+{% extends 'flatpages/default.html' %}
+
+{% load custom_filters %}
+
+{% load custom_tags %}
+
+{% block title %}
+New
+{% endblock title %}
+
+{% block content %}
+<h1>{{ new.name | censor  }}</h1>
+<hr>
+     <table>
+         <tr>
+             <td>{{ new.dateCreation }}</td>
+             <td>{{ new.description | censor }}</td>
+             <td>{{ new.category.name }}</td>
+         </tr>
+     </table>
+{% endblock content %}
