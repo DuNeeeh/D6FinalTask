@@ -1,13 +1,14 @@
-from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from .filters import NewsFilter
-from .forms import NewsForm, PostForm
-from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.db.models import Exists, OuterRef
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.decorators.csrf import csrf_protect
-from .models import Subscriber, Category, News, Post
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+
+from .filters import NewsFilter
+from .forms import NewsForm
+from .models import Subscriber, Category, News
 
 
 @login_required
